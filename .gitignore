@@ -1,0 +1,13 @@
+/.phpunit.cache
+/public/
+
+/vendor
+/src/Service/CommissionCalculationDeveloper.php
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+/config/binconfig/dev_rapid_api_config.php
+/.fleet
+/.idea
+/.vscode
