@@ -53,8 +53,7 @@ class AppController
                     $result["error"][] = "bin is empty";
                 } else {
                    
-                    if ($row->bin == "4745030") {
-                    //if ($row->bin == "45717360") {
+                    //if ($row->bin == "4745030") {
 
                     //receive bin
                     $api_connection_bin = $api_connection->getCountryCardByBin($row->bin);
@@ -68,8 +67,7 @@ class AppController
                  
                     $commission[] = $calculation->getCommissionByZone($row, $currency_state_name, $is_euro_bank_card).PHP_EOL;
         
-
-                    }
+                    //}
                 }
             }
         } else {
