@@ -76,8 +76,7 @@ class AppController
         
         if (count($commission) > 0) {
             $result["success"] = $commission;
-        }
-        //$result1 = "success";  
+        } 
         return $result;
     }
 }
