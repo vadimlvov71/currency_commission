@@ -13,3 +13,9 @@
 1. Clone the repo
    ```sh
    git clone git@github.com:vadimlvov71/symfony6_crud_phpunit.git
+2. run  "php app.php input.php"
+3. run functional tests:
+* ```sh
+      vendor/bin/phpunit tests
+* ![изображение](https://github.com/vadimlvov71/currency_commission/assets/57807117/d83ecb75-f784-4a3c-b7ae-dade156301fa)
+* path to file input.txt set in file: bootstrap.php
