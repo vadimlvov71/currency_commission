@@ -42,11 +42,10 @@ class Helper
      */
     public static function getCountryCard(string $url, string $bin_url_type, string $random_user_agent)
     {
-        #if 429 error
-        //$state = 'DE';
+
         $rows_as_json = Curl::getApiUrl($url, $random_user_agent);
         $rows = json_decode($rows_as_json["content"], true);
-        //$rows = [];
+
         if ($rows) {
             $state = self::getFormattedData($rows, $bin_url_type);
         }

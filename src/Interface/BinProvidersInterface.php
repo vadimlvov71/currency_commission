@@ -6,6 +6,6 @@ namespace App\Interface;
 interface BinProvidersInterface 
 {
 
-    public function getStateName($api_connection_result);
+    public function getStateName(string $api_connection_result): string;
    
 }

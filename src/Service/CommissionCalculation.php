@@ -29,28 +29,20 @@ class CommissionCalculation
         
         if ($is_euro_bank_card === true) {
             if ($row->currency == $this->dto_configs->euro_currency) {
-                //echo "111: <br>";
                 $commission = $this->getCommissionProcent($row->amount, "europe");
                
-            } else {
-                //echo "222: <br>";    
+            } else {    
                 $euro_currency_from_exchange = $this->euroCurrencyFromExchange($row);
-                $commission = $this->getCommissionProcent($euro_currency_from_exchange, "europe"); 
-                     
+                $commission = $this->getCommissionProcent($euro_currency_from_exchange, "europe");    
             }
         } else {
             if ($row->currency == $this->dto_configs->euro_currency) {
-                //echo "000: <br>";
                 $commission = $this->getCommissionProcent($row->amount, "no europe");
             } else {
-                //echo "444: <br>";
                 $euro_currency_from_exchange = $this->euroCurrencyFromExchange($row);
                 $commission = $this->getCommissionProcent($euro_currency_from_exchange, "no europe");
-            }
-            
-            
+            } 
         }
-        
         return $commission;
     }
     /**
@@ -62,10 +54,6 @@ class CommissionCalculation
     {
         
         $rate = $this->exchange_rate[$row->currency];
-       /* echo "currency: ".$row->currency."<br>";
-        echo "row->amount: ".$row->amount."<br>";
-        echo "rate: ".$rate."<br>";
-*/
         $euro_value = $row->amount / $rate;
         return $euro_value;
     }
@@ -82,11 +70,9 @@ class CommissionCalculation
         } else {
             $percent = $this->dto_configs->commission_rate_no_euro_zone;
         }
-        //echo "currency: ".$euro_currency."<br>";
-        //echo "percent: ".$percent."<br>";
+
         $commission = $euro_currency * $percent / 100;
         $commission = $this->roundUp($commission, 2);
-       // echo "commission: ".$commission."<br>";
         return $commission;
     }
     /**
